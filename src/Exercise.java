@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Exercise {
     public static void main(String[] args) {
         /* Exercise 1*/
@@ -6,6 +8,14 @@ public class Exercise {
         /* Exercise2 */
         int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
         System.out.println(max(numbers));
+
+
+        int[] a = {1, 2, -3, 4, 5, 4};
+        int n = 3;
+        windowPosSum(a, n);
+
+        // Should print 4, 8, -3, 13, 9, 4
+        System.out.println(Arrays.toString(a));
     }
 
     //Exercise 1: Drawing a Triangle
@@ -41,6 +51,23 @@ public class Exercise {
         }
         return maxValue;
     }
+
+    public static void windowPosSum(int[] a, int n) {
+        /** your code here */
+        for(int i = 0;i<a.length;i++){
+            if (a[i]<0){
+                continue;
+            }
+            for(int j = 1;j<=n;j++){
+                if(i+j>a.length) break;
+                a[i]= a[i]+a[i+j];
+            }
+
+
+        }
+
+    }
+
 }
 
 
