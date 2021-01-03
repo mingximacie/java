@@ -25,10 +25,19 @@ public class Exercise {
     // Exercise 2:Returns the maximum value from m.
     public static int max(int[] m) {
         int maxValue = m[0];  //每一个数都轮流和第一个数比较
+        //for loop
         for (int i = 0; i < m.length; i++) {
             if (m[i] > maxValue) {
                 maxValue = m[i];
             }
+        }
+        // while loop
+        int i = 0;
+        while(i<m.length){
+            if(m[i]>maxValue){
+                maxValue = m[i];
+            }
+            i++;
         }
         return maxValue;
     }
