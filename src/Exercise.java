@@ -9,7 +9,7 @@ public class Exercise {
         int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
         System.out.println(max(numbers));
 
-
+        // Exercise 4
         int[] a = {1, 2, -3, 4, 5, 4};
         int n = 3;
         windowPosSum(a, n);
@@ -52,22 +52,25 @@ public class Exercise {
         return maxValue;
     }
 
-    public static void windowPosSum(int[] a, int n) {
-        /** your code here */
-        for(int i = 0;i<a.length;i++){
-            if (a[i]<0){
-                continue;
+      //Exercise 4
+        public static void windowPosSum(int[] a, int n) {
+            /** your code here */
+            for(int i = 0;i<a.length;i++){
+                if (a[i]<0){
+                    continue;
+                }else{
+                    for(int j = 1;j<=n;j++){
+                        if((i+j)>=a.length) break;
+                        a[i]= a[i]+a[i+j];
+                    }
+                }
             }
-            for(int j = 1;j<=n;j++){
-                if(i+j>a.length) break;
-                a[i]= a[i]+a[i+j];
-            }
-
 
         }
 
+
     }
 
-}
+
 
 
